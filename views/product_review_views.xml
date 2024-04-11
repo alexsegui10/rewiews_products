@@ -1,0 +1,43 @@
+<odoo>
+    <record id="product_review_form_view" model="ir.ui.view">
+        <field name="name">product.review.form</field>
+        <field name="model">product.review</field>
+        <field name="arch" type="xml">
+            <form string="Reseña de Producto">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="rating"/>
+                        <field name="date"/>
+                        <field name="product_id"/>
+                        <field name="user_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="product_review_tree_view" model="ir.ui.view">
+        <field name="name">product.review.tree</field>
+        <field name="model">product.review</field>
+        <field name="arch" type="xml">
+            <tree string="Reseñas de Producto">
+                <field name="name"/>
+                <field name="product_id"/>
+                <field name="rating"/>
+                <field name="date"/>
+                <field name="user_id"/>
+            </tree>
+        </field>
+    </record>
+    <record id="product_review_action" model="ir.actions.act_window">
+        <field name="name">Reseñas de Producto</field>
+        <field name="res_model">product.review</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_product_review_main"
+              name="Reseñas de Producto"
+              sequence="5"
+              action="product_review_action"
+              parent="sale.sale_order_menu"/>
+</odoo>

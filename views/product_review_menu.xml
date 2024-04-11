@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="product_review_action" model="ir.actions.act_window">
+        <field name="name">Reseñas de Producto</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.review</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Aquí puedes crear y ver reseñas de los productos.
+            </p>
+        </field>
+    </record>
+    <menuitem id="product_reviews_menu_root" name="Reseñas" sequence="10" web_icon="product_reviews,static/description/icon.png"/>
+    <menuitem id="product_reviews_menu_submenu" name="Productos" sequence="10" parent="product_reviews_menu_root"/> 
+    <menuitem id="product_reviews_menu_action" name="Reseñas de Producto" sequence="10" parent="product_reviews_menu_submenu" action="product_review_action"/>
+</odoo>
